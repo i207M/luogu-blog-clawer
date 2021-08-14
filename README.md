@@ -1,4 +1,4 @@
-# Luogu blog Clawer
+# Luogu Blog Clawer
 
 爬取个人洛谷博客的Markdown源码。
 

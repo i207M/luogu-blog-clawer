@@ -5,4 +5,5 @@ db.json
 .vscode
 __pycache__
 clawed_*
-secrets
+headers.py
+example_admin.html
