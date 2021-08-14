@@ -32,10 +32,15 @@ def process(url: str):
     print(f'Clawed {title}')
 
 
+history_set = set(open('history.txt').read().splitlines())
+
 for admin_page in range(1, ADMIN_PAGE_MAX + 1):
     print(f'Admin Page #{admin_page}')
     ret = requests.get(ADMIN_BASE, headers=headers)
     url_list = re.findall(r'/blogAdmin/article/edit/\d+', ret.text)
     for url in url_list:
+        if url in history_set:
+            continue
         time.sleep(10)
         process('https://www.luogu.com.cn' + url)
+        open('history.txt', 'a+').write(url + '\n')
