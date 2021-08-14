@@ -1,4 +1,6 @@
+import time
 import re
+import codecs
 
 import requests
 
@@ -21,7 +23,13 @@ def process(url: str):
             title = line[85:-3]
         if line.startswith('        var articleContent = "'):
             post = line[30:-2]
-            open(title + '.md', 'w').write(post)
+            post = post.replace(r'\/', '/')
+            post = codecs.decode(post, 'unicode_escape')
+            open('clawed/' + title + '.md', 'w').write(post)
+    if (title == ''):
+        print(ret.text)
+        raise
+    print(f'Clawed {title}')
 
 
 for admin_page in range(1, ADMIN_PAGE_MAX + 1):
@@ -29,4 +37,5 @@ for admin_page in range(1, ADMIN_PAGE_MAX + 1):
     ret = requests.get(ADMIN_BASE, headers=headers)
     url_list = re.findall(r'/blogAdmin/article/edit/\d+', ret.text)
     for url in url_list:
+        time.sleep(10)
         process('https://www.luogu.com.cn' + url)
