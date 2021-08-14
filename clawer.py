@@ -37,7 +37,7 @@ history_set = set(open('history.txt').read().splitlines())
 for admin_page in range(1, ADMIN_PAGE_MAX + 1):
     time.sleep(10)
     print(f'Admin Page #{admin_page}')
-    ret = requests.get(ADMIN_BASE, headers=headers)
+    ret = requests.get(ADMIN_BASE.format(admin_page), headers=headers)
     url_list = re.findall(r'/blogAdmin/article/edit/\d+', ret.text)
     for url in url_list:
         if url in history_set:
