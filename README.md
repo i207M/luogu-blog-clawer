@@ -11,7 +11,7 @@
    - 洛谷博客管理后台的最大页数`ADMIN_PAGE_MAX`
 2. 运行`clawer.py`
 
-`.md`文件会保存到`clawed`文件夹内。
+`.md`文件会保存到`clawed`文件夹内，程序会产生临时文件`history.txt, swap.txt`。
 
 ## Attention
 

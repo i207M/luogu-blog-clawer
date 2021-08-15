@@ -4,7 +4,7 @@ db.json
 *.log
 .vscode
 __pycache__
-clawed/*
+clawed*
 params.py
 example_admin.html
 example_post.html

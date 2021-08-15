@@ -1,5 +1,6 @@
 import codecs
 import html
+import os
 import re
 import time
 
@@ -37,6 +38,7 @@ def process(url: str):
 
 if __name__ == '__main__':
     history_set = set(open('history.txt').read().splitlines())
+    os.makedirs('clawed', exist_ok=True)
 
     for admin_page in range(1, ADMIN_PAGE_MAX + 1):
         time.sleep(INTERVAL)
