@@ -37,7 +37,8 @@ def process(url: str):
 
 
 if __name__ == '__main__':
-    history_set = set(open('history.txt').read().splitlines())
+    history_set = set(open('history.txt').read().splitlines()
+                      ) if os.path.exists('history.txt') else set()
     os.makedirs('clawed', exist_ok=True)
 
     for admin_page in range(1, ADMIN_PAGE_MAX + 1):
