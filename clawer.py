@@ -39,7 +39,7 @@ def process(url: str):
 
 
 # if __name__ == '__main__':
-#     process('/blogAdmin/article/edit/142252')
+#     process('/blogAdmin/article/edit/')
 #     exit(0)
 
 if __name__ == '__main__':
