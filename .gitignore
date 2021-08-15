@@ -5,7 +5,8 @@ db.json
 .vscode
 __pycache__
 clawed/*
-headers.py
+params.py
 example_admin.html
 example_post.html
 history.txt
+swap.txt
