@@ -21,6 +21,7 @@ def process(url: str):
         ):
             title = line[85:-3]
             filename = html.unescape(title)
+            filename = re.sub(r'[^\w_.)( -]', '_', filename)
             if title != filename:
                 open('swap.txt', 'a+').write(f'{title} => {filename}\n')
         if line.startswith('        var articleContent = "'):
